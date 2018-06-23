@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Let Me In</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    
+    #app {
+      width: 100%;
+      height: 100%;
+    }
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    
+    #map {
+      position:absolute;
+      top: 0;
+      height: 100vh;
+      width: 100vw;
+      z-index:-1;
+    }
+    
+    #marquee{
+      display:inline-block;
+      position:absolute;
+      left:9.5%;
+      top:4%;
+      border-top:1px solid #fff;
+      text-align:center;
+      background: rgb(230,229,229);
+      background: linear-gradient(90deg, rgba(240,242,247,.6) 0%, rgba(244,243,231,1) 21%, rgba(255,253,211,1) 51%, rgba(251,251,250,1) 79%, rgba(236,237,237,.6) 100%);
+      pointer-events:none;
+      opacity:1;
+    }
+    
+    .box {
+      width:70%;
+      padding:4.5%;
+      background:#fff;
+      border-radius:2px;
+    }
+    .box h4{
+      background:#eee;
+      margin:0;
+      padding:60px 20px;
+      text-align:center;
+      -webkit-box-shadow:0 0px 4px rgba(0, 0, 0, 0.2);
+      box-shadow:0 0px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .css3-shadow{
+      position:relative;
+      -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3);
+      box-shadow:0 1px 4px rgba(0, 0, 0, 0.3);
+    }
+    /*==================================================
+    * Drop shadow effect with box-shadow
+    * ===============================================*/
+    .css3-shadow:after{
+      content:"";
+      position:absolute;
+      z-index:-1;
+      -webkit-box-shadow:0 0 10vw rgba(0,0,0,0.8);
+      box-shadow:0 0 10vw rgba(0,0,0,0.8);
+      bottom:0px;
+      left:22%;
+      right:10%;
+      width:60%;
+      height:50%;
+      -moz-border-radius:100%;
+      border-radius:100%;
+    }
+    
+    #bigBorder{
+      display:inline-block;
+      display:none;
+      
+      position:absolute;
+      top:30vh;
+      left:12.5%;
+      border:1px solid rgba(50,50,50,0);
+      width:75%;
+      height:75vw;
+      border-radius:50%;
+      background: rgb(188,204,187);
+      background: radial-gradient(circle, rgba(97,105,81,1) 61%, rgba(224,224,224,1) 63%, rgba(11,15,13,1) 85%);
+      box-shadow:0 0 2vw rgb(0,0,0),0 7vw 25vw rgb(33,48,35);
+    }
+    
+    #letMeIn{
+      margin: 8% auto;
+      width:85%;
+      height:63vw;
+      border-radius:50%;
+      background: rgb(12,255,0);
+      background: radial-gradient(circle, rgba(44,255,60,1) 48%, rgba(155,255,150,1) 68%, rgba(0,124,0,1) 69%);
+      color:#eeb;
+      font-size:11vw;
+      text-shadow:-1px -1px 1px #fff, 0 0 4vw rgb(123,142,123);
+      font-weight:bold;
+      text-align:center;
+      line-height:63vw;
+      box-shadow:1px 5px 8px rgb(6,36,7);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+
+    <main class="main">
+      <div id="map"></div>
+      
+      <div id="marquee" class="box css3-shadow">SOME REALTORS NEARBY</div>
+      
+      <div id="bigBorder">
+        <div id="letMeIn" class="">LET ME IN</div>
+      </div>
+    </main>
+
+    <div class="loader">
+      <!-- Show a spinner or placeholders for content -->
+    </div>
+
+    <script async src="scripts/track.js"></script>
+    <script async src="scripts/mapButtons.js"></script>
+    <script async src="../scripts/geolocator.js" onload="_main_()"></script>
+  </div>
+</body>
+
+</html>
